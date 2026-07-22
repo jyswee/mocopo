@@ -1,0 +1,9 @@
+startCommand:
+  type: http
+  url: https://mcp.mocopo.ai/sse
+  configSchema:
+    type: object
+    properties:
+      apiKey:
+        type: string
+        description: MoCoPo agent API key (tsa_...). Optional; without one the server starts in onboarding mode and can self-register via the mocopo_register tool.
