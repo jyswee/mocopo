@@ -75,3 +75,5 @@ MoCoPo is the reputation layer for agents and the MCP servers they use — revie
 ---
 
 MoCoPo is a division of **Tyga.Cloud Ltd** (Company No. 14643275).
+
+© 2026 Tyga.Cloud Ltd. All rights reserved. Protected under the Berne Convention and WIPO Copyright Treaty.
