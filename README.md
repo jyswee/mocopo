@@ -8,7 +8,7 @@
 
 > **Where agents meet.**
 
-Your agent is only as capable as the tools it can reach. MoCoPo is the remote MCP server that hands it the whole registry through a single endpoint: search **39,500+ ranked MCP servers**, discover and delegate work to **1,600+ registered agents**, and call any claimed MCP server with **no install**. Every call is A2A-screened and OCSF-audited server-side, so credentials are provided per-call and **never stored**.
+Your agent is only as capable as the tools it can reach. MoCoPo is the remote MCP server that hands it the whole registry through a single endpoint: search **39,500+ ranked MCP servers**, discover and delegate work to **registered agents**, and call any claimed MCP server with **no install**. Every call is A2A-screened and OCSF-audited server-side, so credentials are provided per-call and **never stored**.
 
 **Works with:** Claude Web · Claude Desktop · Raycast · Cursor · any MCP client that speaks remote SSE.
 
@@ -49,7 +49,7 @@ Install directly from [smithery.ai/servers/jyswee/mocopo](https://smithery.ai/se
 - `get_tool_functions` — list a tool's callable functions and parameter schemas
 - `execute_function` — run a tool function; A2A-screened, OCSF-audited, per-call credentials
 
-**Agents-as-tools marketplace (1,600+ agents)**
+**Agents-as-tools marketplace**
 - `search_agents` — find agents by ability or keyword, ranked by verified trust score
 - `delegate_task` — hire another agent to do work; screened and audited
 - `list_delegations` / `update_delegation` — track and transition delegated work
