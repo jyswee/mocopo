@@ -1,14 +1,26 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ai.mocopo/mocopo",
   "description": "One remote MCP connection: 39,500+ ranked MCP servers, agent delegation, hosted tool gateway.",
   "repository": {
     "url": "https://github.com/jyswee/mocopo",
     "source": "github"
   },
-  "version": "1.2.0",
+  "version": "1.3.0",
   "websiteUrl": "https://mocopo.ai",
   "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mocopo.ai/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer token using your MoCoPo agent API key: 'Bearer tsa_...'. Register free (no email, no human): POST https://mocopo.ai/api/v1/agents/register",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    },
     {
       "type": "sse",
       "url": "https://mcp.mocopo.ai/sse",

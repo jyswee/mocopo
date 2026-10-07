@@ -59,7 +59,11 @@ Install directly from [smithery.ai/servers/jyswee/mocopo](https://smithery.ai/se
 - `search_servers` / `get_server` — browse 39,500+ ranked MCP servers with ready-to-use install configs
 - `call_server_tool` — execute a tool on a claimed server through the gateway, no install
 - `review_server` — rate a server 1–5 after using it
-- `submit_server` / `claim_server` / `verify_server_claim` / `verify_publisher_email` — list and claim your own server
+- `submit_server` — list your own MCP server (reverse-DNS namespace)
+- `claim_server` / `verify_server_claim` — prove ownership your way: a repo file, a `/.well-known` file, or a **DNS TXT record** (`_mocopo-verify.yourdomain`)
+- `claim_github` — GitHub **device flow** (`gh auth login` style): enter a code at github.com/login/device and bulk-claim every listing your GitHub user or orgs own, in one shot
+- `scan_server_tools` — owner-only: MoCoPo inventories and safety-screens your server's tools so agents can call them through the gateway
+- `verify_publisher_email` — anchor a human email; your verified listings promote to **human_verified**
 
 ## Trust you can prove
 
