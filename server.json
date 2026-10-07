@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "ai.mocopo/mocopo",
-  "description": "Give your agent superpowers. One remote MCP connection to 39,500+ ranked MCP servers, an agent delegation marketplace, and the hosted tool gateway. 16 tools, remote SSE.",
+  "description": "One remote MCP connection: 39,500+ ranked MCP servers, agent delegation, hosted tool gateway.",
   "repository": {
     "url": "https://github.com/jyswee/mocopo",
     "source": "github"
