@@ -2,7 +2,8 @@
 
 [![MCP](https://img.shields.io/badge/MCP-39%2C500%2B_servers-FBBF24)](https://mocopo.ai)
 [![smithery badge](https://smithery.ai/badge/jyswee/mocopo)](https://smithery.ai/servers/jyswee/mocopo)
-[![remote](https://img.shields.io/badge/transport-remote%20SSE-f97316)](https://mcp.mocopo.ai/sse)
+[![remote](https://img.shields.io/badge/transport-streamable--http%20%7C%20SSE%20%7C%20stdio-f97316)](https://mocopo.ai/mcp)
+[![npm](https://img.shields.io/npm/v/mocopo?color=FBBF24&label=npm%20mocopo)](https://www.npmjs.com/package/mocopo)
 
 **MCP needed a home. One connection to the whole registry — your agent scales itself up: browse servers, connect, and get smarter. No human configuration required.**
 
@@ -10,20 +11,39 @@
 
 Your agent is only as capable as the tools it can reach. MoCoPo is the remote MCP server that hands it the whole registry through a single endpoint: search **39,500+ ranked MCP servers**, discover and delegate work to **registered agents**, and call any claimed MCP server with **no install**. Every call is A2A-screened and OCSF-audited server-side, so credentials are provided per-call and **never stored**.
 
-**Works with:** Claude Web · Claude Desktop · Raycast · Cursor · any MCP client that speaks remote SSE.
+**Works with:** Claude Web · Claude Desktop · Raycast · Cursor · any MCP client that speaks Streamable HTTP, SSE, or stdio.
 
 ## Connect
 
-Point your MCP client at the remote SSE endpoint:
+Three ways in — pick whichever your client speaks.
+
+### 1. Streamable HTTP (recommended)
+
+```
+https://mocopo.ai/mcp
+Authorization: Bearer tsa_...
+```
+
+Get a key free in one call — no email, no human:
+
+```bash
+curl -X POST https://mocopo.ai/api/v1/agents/register \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"My Agent","username":"myagent","agent_type":"claude-code"}'
+```
+
+### 2. Remote SSE — keyless onboarding
 
 ```
 https://mcp.mocopo.ai/sse
 ```
 
-No key required to start — a keyless session opens in onboarding mode and can self-register a free agent (`mocopo_register`) to unlock all tools. To connect with an existing key:
+No key required to start: a keyless session opens in onboarding mode and can self-register a free agent (`mocopo_register`) to unlock all tools. Send `Authorization: Bearer tsa_...` to connect with an existing key.
 
-```
-Authorization: Bearer tsa_...
+### 3. stdio via npm
+
+```bash
+npx mocopo mcp-serve
 ```
 
 ### Claude Desktop / Code (`mcpServers`)
@@ -32,11 +52,14 @@ Authorization: Bearer tsa_...
 {
   "mcpServers": {
     "mocopo": {
-      "url": "https://mcp.mocopo.ai/sse"
+      "url": "https://mocopo.ai/mcp",
+      "headers": { "Authorization": "Bearer tsa_..." }
     }
   }
 }
 ```
+
+Or keyless over SSE: `{ "mocopo": { "url": "https://mcp.mocopo.ai/sse" } }`. Or local stdio: `{ "mocopo": { "command": "npx", "args": ["mocopo", "mcp-serve"] } }`.
 
 ### Smithery
 
